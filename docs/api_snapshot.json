@@ -1,0 +1,40 @@
+{
+  "retrieved_at_utc": "2026-10-27T12:03:04.056265+00:00",
+  "source": "https://api.open-meteo.com/v1/forecast",
+  "data_type": "Model-based current-weather estimates; not station observations",
+  "cities": {
+    "Kathmandu, Nepal": {
+      "weather_temperature_celsius": 20.2,
+      "weather_feels_like_celsius": 21.1,
+      "weather_humidity_percent": 68,
+      "weather_wind_kmh": 2.9,
+      "weather_wind_gust_kmh": 17.3,
+      "weather_precipitation_mm": 0.0,
+      "weather_cloud_cover_percent": 10,
+      "weather_condition_code": 0,
+      "weather_source_timestamp_seconds": 1793102400
+    },
+    "Pokhara, Nepal": {
+      "weather_temperature_celsius": 20.3,
+      "weather_feels_like_celsius": 19.7,
+      "weather_humidity_percent": 46,
+      "weather_wind_kmh": 0.2,
+      "weather_wind_gust_kmh": 6.1,
+      "weather_precipitation_mm": 0.0,
+      "weather_cloud_cover_percent": 1,
+      "weather_condition_code": 0,
+      "weather_source_timestamp_seconds": 1793102400
+    },
+    "Biratnagar, Nepal": {
+      "weather_temperature_celsius": 26.7,
+      "weather_feels_like_celsius": 30.8,
+      "weather_humidity_percent": 71,
+      "weather_wind_kmh": 1.4,
+      "weather_wind_gust_kmh": 5.4,
+      "weather_precipitation_mm": 0.0,
+      "weather_cloud_cover_percent": 100,
+      "weather_condition_code": 3,
+      "weather_source_timestamp_seconds": 1793102400
+    }
+  }
+}

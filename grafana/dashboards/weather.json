@@ -1,0 +1,2415 @@
+{
+  "uid": "nepal-cities-weather",
+  "title": "Nepal Cities Weather",
+  "tags": [
+    "nepal",
+    "weather",
+    "open-meteo"
+  ],
+  "timezone": "Asia/Kathmandu",
+  "schemaVersion": 40,
+  "version": 1,
+  "editable": true,
+  "refresh": "10s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h"
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "Nepal cities · weather at a glance",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 3
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "### Kathmandu · Pokhara · Biratnagar\nNepal time (UTC+05:45) · Units: °C, km/h, mm. Dashboard refresh: **10 seconds**; provider downloads: **5 minutes**.\n[Weather data by Open-Meteo](https://open-meteo.com/) · Model-based estimates, not ground-station measurements. Check source age and download status before interpreting readings. Charts build history while collection runs."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Kathmandu, Nepal · Temperature",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 6,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_temperature_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Kathmandu, Nepal · Feels like",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 10,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_feels_like_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Kathmandu, Nepal · Humidity",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 14,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_humidity_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Kathmandu, Nepal · Wind speed",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 18,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Kathmandu, Nepal · Wind gusts",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 22,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_gust_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Kathmandu, Nepal · Precipitation · current interval",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 26,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_precipitation_mm{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "lengthmm",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Kathmandu, Nepal · Cloud cover",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 30,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_cloud_cover_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Kathmandu, Nepal · Conditions",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 34,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_condition_code{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Clear sky"
+                },
+                "1": {
+                  "text": "Mainly clear"
+                },
+                "2": {
+                  "text": "Partly cloudy"
+                },
+                "3": {
+                  "text": "Overcast"
+                },
+                "45": {
+                  "text": "Fog"
+                },
+                "48": {
+                  "text": "Rime fog"
+                },
+                "51": {
+                  "text": "Light drizzle"
+                },
+                "53": {
+                  "text": "Drizzle"
+                },
+                "55": {
+                  "text": "Heavy drizzle"
+                },
+                "56": {
+                  "text": "Freezing drizzle"
+                },
+                "57": {
+                  "text": "Heavy freezing drizzle"
+                },
+                "61": {
+                  "text": "Light rain"
+                },
+                "63": {
+                  "text": "Rain"
+                },
+                "65": {
+                  "text": "Heavy rain"
+                },
+                "66": {
+                  "text": "Freezing rain"
+                },
+                "67": {
+                  "text": "Heavy freezing rain"
+                },
+                "71": {
+                  "text": "Light snow"
+                },
+                "73": {
+                  "text": "Snow"
+                },
+                "75": {
+                  "text": "Heavy snow"
+                },
+                "77": {
+                  "text": "Snow grains"
+                },
+                "80": {
+                  "text": "Light showers"
+                },
+                "81": {
+                  "text": "Showers"
+                },
+                "82": {
+                  "text": "Violent showers"
+                },
+                "85": {
+                  "text": "Snow showers"
+                },
+                "86": {
+                  "text": "Heavy snow showers"
+                },
+                "95": {
+                  "text": "Thunderstorm"
+                },
+                "96": {
+                  "text": "Thunderstorm with hail"
+                },
+                "99": {
+                  "text": "Severe hail thunderstorm"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Kathmandu, Nepal · Latest download succeeded",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 38,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Failed / retrying",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "OK",
+                  "color": "green"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Kathmandu, Nepal · Age of weather estimate",
+      "type": "stat",
+      "description": "Time since the weather estimate timestamp supplied by Open-Meteo. Retained data grows older during an outage.",
+      "gridPos": {
+        "x": 0,
+        "y": 42,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Kathmandu, Nepal · Time since download",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 46,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Pokhara, Nepal · Temperature",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 6,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_temperature_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Pokhara, Nepal · Feels like",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 10,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_feels_like_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Pokhara, Nepal · Humidity",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 14,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_humidity_percent{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Pokhara, Nepal · Wind speed",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 18,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Pokhara, Nepal · Wind gusts",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 22,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_gust_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Pokhara, Nepal · Precipitation · current interval",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 26,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_precipitation_mm{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "lengthmm",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Pokhara, Nepal · Cloud cover",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 30,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_cloud_cover_percent{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Pokhara, Nepal · Conditions",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 34,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_condition_code{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Clear sky"
+                },
+                "1": {
+                  "text": "Mainly clear"
+                },
+                "2": {
+                  "text": "Partly cloudy"
+                },
+                "3": {
+                  "text": "Overcast"
+                },
+                "45": {
+                  "text": "Fog"
+                },
+                "48": {
+                  "text": "Rime fog"
+                },
+                "51": {
+                  "text": "Light drizzle"
+                },
+                "53": {
+                  "text": "Drizzle"
+                },
+                "55": {
+                  "text": "Heavy drizzle"
+                },
+                "56": {
+                  "text": "Freezing drizzle"
+                },
+                "57": {
+                  "text": "Heavy freezing drizzle"
+                },
+                "61": {
+                  "text": "Light rain"
+                },
+                "63": {
+                  "text": "Rain"
+                },
+                "65": {
+                  "text": "Heavy rain"
+                },
+                "66": {
+                  "text": "Freezing rain"
+                },
+                "67": {
+                  "text": "Heavy freezing rain"
+                },
+                "71": {
+                  "text": "Light snow"
+                },
+                "73": {
+                  "text": "Snow"
+                },
+                "75": {
+                  "text": "Heavy snow"
+                },
+                "77": {
+                  "text": "Snow grains"
+                },
+                "80": {
+                  "text": "Light showers"
+                },
+                "81": {
+                  "text": "Showers"
+                },
+                "82": {
+                  "text": "Violent showers"
+                },
+                "85": {
+                  "text": "Snow showers"
+                },
+                "86": {
+                  "text": "Heavy snow showers"
+                },
+                "95": {
+                  "text": "Thunderstorm"
+                },
+                "96": {
+                  "text": "Thunderstorm with hail"
+                },
+                "99": {
+                  "text": "Severe hail thunderstorm"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Pokhara, Nepal · Latest download succeeded",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 38,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Failed / retrying",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "OK",
+                  "color": "green"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Pokhara, Nepal · Age of weather estimate",
+      "type": "stat",
+      "description": "Time since the weather estimate timestamp supplied by Open-Meteo. Retained data grows older during an outage.",
+      "gridPos": {
+        "x": 8,
+        "y": 42,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Pokhara, Nepal · Time since download",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 46,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Biratnagar, Nepal · Temperature",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 6,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_temperature_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Biratnagar, Nepal · Feels like",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 10,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_feels_like_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Biratnagar, Nepal · Humidity",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 14,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_humidity_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Biratnagar, Nepal · Wind speed",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 18,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Biratnagar, Nepal · Wind gusts",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 22,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_gust_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 29,
+      "title": "Biratnagar, Nepal · Precipitation · current interval",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 26,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_precipitation_mm{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "lengthmm",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 30,
+      "title": "Biratnagar, Nepal · Cloud cover",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 30,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_cloud_cover_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 31,
+      "title": "Biratnagar, Nepal · Conditions",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 34,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_condition_code{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Clear sky"
+                },
+                "1": {
+                  "text": "Mainly clear"
+                },
+                "2": {
+                  "text": "Partly cloudy"
+                },
+                "3": {
+                  "text": "Overcast"
+                },
+                "45": {
+                  "text": "Fog"
+                },
+                "48": {
+                  "text": "Rime fog"
+                },
+                "51": {
+                  "text": "Light drizzle"
+                },
+                "53": {
+                  "text": "Drizzle"
+                },
+                "55": {
+                  "text": "Heavy drizzle"
+                },
+                "56": {
+                  "text": "Freezing drizzle"
+                },
+                "57": {
+                  "text": "Heavy freezing drizzle"
+                },
+                "61": {
+                  "text": "Light rain"
+                },
+                "63": {
+                  "text": "Rain"
+                },
+                "65": {
+                  "text": "Heavy rain"
+                },
+                "66": {
+                  "text": "Freezing rain"
+                },
+                "67": {
+                  "text": "Heavy freezing rain"
+                },
+                "71": {
+                  "text": "Light snow"
+                },
+                "73": {
+                  "text": "Snow"
+                },
+                "75": {
+                  "text": "Heavy snow"
+                },
+                "77": {
+                  "text": "Snow grains"
+                },
+                "80": {
+                  "text": "Light showers"
+                },
+                "81": {
+                  "text": "Showers"
+                },
+                "82": {
+                  "text": "Violent showers"
+                },
+                "85": {
+                  "text": "Snow showers"
+                },
+                "86": {
+                  "text": "Heavy snow showers"
+                },
+                "95": {
+                  "text": "Thunderstorm"
+                },
+                "96": {
+                  "text": "Thunderstorm with hail"
+                },
+                "99": {
+                  "text": "Severe hail thunderstorm"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 32,
+      "title": "Biratnagar, Nepal · Latest download succeeded",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 38,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Failed / retrying",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "OK",
+                  "color": "green"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 33,
+      "title": "Biratnagar, Nepal · Age of weather estimate",
+      "type": "stat",
+      "description": "Time since the weather estimate timestamp supplied by Open-Meteo. Retained data grows older during an outage.",
+      "gridPos": {
+        "x": 16,
+        "y": 42,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 34,
+      "title": "Biratnagar, Nepal · Time since download",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 46,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 35,
+      "title": "Collector reachable",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 3,
+        "w": 8,
+        "h": 3
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "up{job=\"weather\"}",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Offline",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "Online",
+                  "color": "green"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 36,
+      "title": "Provider download interval",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 3,
+        "w": 8,
+        "h": 3
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(weather_poll_interval_seconds)",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 37,
+      "title": "Cities with successful latest download",
+      "type": "stat",
+      "description": "",
+      "gridPos": {
+        "x": 16,
+        "y": 3,
+        "w": 8,
+        "h": 3
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(weather_fetch_success)",
+          "legendFormat": "{{city}}",
+          "instant": true,
+          "range": false
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "id": 38,
+      "title": "Temperature comparison",
+      "type": "timeseries",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 50,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_temperature_celsius{city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": false,
+          "range": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 12,
+            "showPoints": "never",
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 39,
+      "title": "Humidity comparison",
+      "type": "timeseries",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 50,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_humidity_percent{city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": false,
+          "range": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 12,
+            "showPoints": "never",
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 40,
+      "title": "Wind speed comparison",
+      "type": "timeseries",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 58,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_wind_kmh{city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": false,
+          "range": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "velocitykmh",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 12,
+            "showPoints": "never",
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 41,
+      "title": "Precipitation comparison · current interval",
+      "type": "timeseries",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 58,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "weather-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "weather_precipitation_mm{city=~\"$city\"}",
+          "legendFormat": "{{city}}",
+          "instant": false,
+          "range": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "lengthmm",
+          "decimals": 1,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 12,
+            "showPoints": "never",
+            "spanNulls": false
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "city",
+        "label": "City",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "weather-prometheus"
+        },
+        "query": "label_values(weather_fetch_success, city)",
+        "refresh": 1,
+        "multi": true,
+        "includeAll": true,
+        "allValue": ".*",
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "description": "Model-based weather estimates for Kathmandu, Pokhara and Biratnagar. Nepal adaptation maintained by Shyam Prasad Kuikel."
+}

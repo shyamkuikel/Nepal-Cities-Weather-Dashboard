@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+*.db
+*.sqlite*
+data/
+backups/
+__pycache__/
+*.pyc
+.DS_Store
+
+live_snapshot.json

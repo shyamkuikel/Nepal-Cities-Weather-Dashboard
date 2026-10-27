@@ -1,0 +1,60 @@
+# HELP weather_temperature_celsius Air temperature in degrees Celsius.
+# TYPE weather_temperature_celsius gauge
+# HELP weather_feels_like_celsius Apparent temperature in degrees Celsius.
+# TYPE weather_feels_like_celsius gauge
+# HELP weather_humidity_percent Relative humidity percent.
+# TYPE weather_humidity_percent gauge
+# HELP weather_wind_kmh Wind speed in kilometres per hour.
+# TYPE weather_wind_kmh gauge
+# HELP weather_wind_gust_kmh Wind gusts in kilometres per hour.
+# TYPE weather_wind_gust_kmh gauge
+# HELP weather_precipitation_mm Precipitation during the provider current interval in millimetres.
+# TYPE weather_precipitation_mm gauge
+# HELP weather_cloud_cover_percent Cloud cover percent.
+# TYPE weather_cloud_cover_percent gauge
+# HELP weather_condition_code WMO weather condition code.
+# TYPE weather_condition_code gauge
+# HELP weather_fetch_success Whether the most recent provider request succeeded.
+# TYPE weather_fetch_success gauge
+# HELP weather_source_timestamp_seconds Provider weather timestamp in Unix seconds.
+# TYPE weather_source_timestamp_seconds gauge
+# HELP weather_last_success_timestamp_seconds Last successful download in Unix seconds.
+# TYPE weather_last_success_timestamp_seconds gauge
+# HELP weather_poll_interval_seconds Configured provider polling interval in seconds.
+# TYPE weather_poll_interval_seconds gauge
+weather_temperature_celsius{city="Kathmandu, Nepal"} 20.2
+weather_feels_like_celsius{city="Kathmandu, Nepal"} 21.1
+weather_humidity_percent{city="Kathmandu, Nepal"} 68
+weather_wind_kmh{city="Kathmandu, Nepal"} 2.9
+weather_wind_gust_kmh{city="Kathmandu, Nepal"} 17.3
+weather_precipitation_mm{city="Kathmandu, Nepal"} 0.0
+weather_cloud_cover_percent{city="Kathmandu, Nepal"} 10
+weather_condition_code{city="Kathmandu, Nepal"} 0
+weather_source_timestamp_seconds{city="Kathmandu, Nepal"} 1793102400
+weather_last_success_timestamp_seconds{city="Kathmandu, Nepal"} 1793102758.3668785
+weather_fetch_success{city="Kathmandu, Nepal"} 1
+weather_poll_interval_seconds{city="Kathmandu, Nepal"} 300.0
+weather_temperature_celsius{city="Pokhara, Nepal"} 20.3
+weather_feels_like_celsius{city="Pokhara, Nepal"} 19.7
+weather_humidity_percent{city="Pokhara, Nepal"} 46
+weather_wind_kmh{city="Pokhara, Nepal"} 0.2
+weather_wind_gust_kmh{city="Pokhara, Nepal"} 6.1
+weather_precipitation_mm{city="Pokhara, Nepal"} 0.0
+weather_cloud_cover_percent{city="Pokhara, Nepal"} 1
+weather_condition_code{city="Pokhara, Nepal"} 0
+weather_source_timestamp_seconds{city="Pokhara, Nepal"} 1793102400
+weather_last_success_timestamp_seconds{city="Pokhara, Nepal"} 1793102758.374469
+weather_fetch_success{city="Pokhara, Nepal"} 1
+weather_poll_interval_seconds{city="Pokhara, Nepal"} 300.0
+weather_temperature_celsius{city="Biratnagar, Nepal"} 26.7
+weather_feels_like_celsius{city="Biratnagar, Nepal"} 30.8
+weather_humidity_percent{city="Biratnagar, Nepal"} 71
+weather_wind_kmh{city="Biratnagar, Nepal"} 1.4
+weather_wind_gust_kmh{city="Biratnagar, Nepal"} 5.4
+weather_precipitation_mm{city="Biratnagar, Nepal"} 0.0
+weather_cloud_cover_percent{city="Biratnagar, Nepal"} 100
+weather_condition_code{city="Biratnagar, Nepal"} 3
+weather_source_timestamp_seconds{city="Biratnagar, Nepal"} 1793102400
+weather_last_success_timestamp_seconds{city="Biratnagar, Nepal"} 1793102758.3706546
+weather_fetch_success{city="Biratnagar, Nepal"} 1
+weather_poll_interval_seconds{city="Biratnagar, Nepal"} 300.0
