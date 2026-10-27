@@ -9,7 +9,19 @@ Checks performed on 27 October 2026 for the Nepal adaptation:
 - [GitHub Actions run 1](https://github.com/shyamkuikel/Nepal-Cities-Weather-Dashboard/actions/runs/40501327617) passed all nine tests, startup-script syntax checks and Docker Compose configuration validation.
 - `sh -n start.sh` passed. Configuration JSON and YAML syntax and relative documentation links were checked.
 
-**Runtime limit:** Docker is unavailable in the preparation environment. The complete Docker/Grafana/Prometheus stack and rendered Grafana panels have not been run here. The supplied GitHub Actions workflow validates Compose configuration; an end-to-end local launch remains the next runtime check. No dashboard screenshot or successful container launch is claimed.
+## Docker integration check
+
+[GitHub Actions run 3](https://github.com/shyamkuikel/Nepal-Cities-Weather-Dashboard/actions/runs/40502023738) started the real Docker services and passed:
+
+- Grafana health and database availability.
+- Automatic provisioning of the Nepal dashboard (41 panels, Asia/Kathmandu time zone).
+- Provisioning of the Prometheus data source.
+- Successful Prometheus scraping and city status series for all three locations.
+- Successful live API downloads and temperature metrics for all three cities in that run.
+
+The integration script reports provider availability separately from stack health because upstream outages can occur. This run had three successful provider downloads. The continuous integration actions were updated to Node.js 24 versions after an older-action deprecation warning, and the runner is pinned to Ubuntu 24.04.
+
+**Remaining scope:** browser rendering and visual layout inside Grafana have not been manually inspected. Docker is unavailable in the local preparation environment; service startup and provisioning were verified on GitHub's Linux runner. This is not a validation against station observations or a test of forecast accuracy.
 
 ## Recheck
 

@@ -113,7 +113,7 @@ sh -n start.sh
 docker compose config --quiet
 ```
 
-Tests use fixtures. The separate live-check command verifies API connectivity. GitHub Actions runs unit tests, shell syntax checks and Compose validation with disposable credentials.
+Tests use fixtures. The separate live-check command verifies API connectivity. GitHub Actions runs unit tests and shell checks, then starts the actual Docker stack with disposable credentials. It verifies Grafana dashboard provisioning and Prometheus scraping. Live provider availability is reported separately from stack health.
 
 ```sh
 docker compose ps
@@ -133,6 +133,7 @@ Normal `docker compose down` preserves named volumes. Keep Docker running and th
 | [grafana/dashboards/weather.json](grafana/dashboards/weather.json) | Dashboard definition |
 | [compose.yaml](compose.yaml) | Local services |
 | [tests/test_weather.py](tests/test_weather.py) | Automated tests |
+| [tests/check_stack.py](tests/check_stack.py) | Running Docker-stack integration checks |
 | [VERIFICATION.md](VERIFICATION.md) | Verified behavior and remaining checks |
 
 ## Sources and attribution
