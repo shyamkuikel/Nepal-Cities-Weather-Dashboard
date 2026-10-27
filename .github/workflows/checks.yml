@@ -16,8 +16,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Validate startup script
         run: sh -n start.sh
-      - name: Validate Compose with temporary credentials
+      - name: Validate and start stack with temporary credentials
         run: |
           export GRAFANA_ADMIN_USER="$(python -c 'import secrets; print(secrets.token_hex(8))')"
           export GRAFANA_ADMIN_PASSWORD="$(python -c 'import secrets; print(secrets.token_hex(24))')"
           docker compose config --quiet
+          trap 'docker compose down --volumes' EXIT
+          docker compose up -d --build
+          python tests/check_stack.py
