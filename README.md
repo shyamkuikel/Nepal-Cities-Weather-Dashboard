@@ -1,6 +1,6 @@
 # Nepal Cities Weather Dashboard
 
-**Nepal adaptation maintained by Shyam Prasad Kuikel**
+**Developed and maintained by Shyam Prasad Kuikel**
 
 A Python, Prometheus and Grafana project comparing weather estimates in **Kathmandu, Pokhara and Biratnagar**. It downloads real Open-Meteo API responses and displays temperature, feels-like temperature, humidity, wind, gusts, precipitation, cloud cover and weather conditions.
 
@@ -100,7 +100,7 @@ Changing city names also requires updating card titles and queries in `grafana/d
 
 Precipitation is the provider's **current-interval amount, not a daily total**. Do not sum repeated scrapes to estimate rainfall. Estimates represent a model grid point near the requested coordinates; terrain and microclimates can differ from conditions at a particular street or station.
 
-Failed downloads retain the last successful sample and mark the city as failed. Check download status and source age. Data are not backfilled while the computer sleeps or services stop. The collector cache resets on restart; Prometheus history persists in its named volume. `/health` checks HTTP availability, not upstream data quality.
+Failed downloads retain the last successful sample for diagnostics and mark the city as failed. Live weather panels suppress readings when the last fetch failed, the last successful download is older than 15 minutes, or the provider observation is older than 2 hours. Check download status and source age. Data are not backfilled while the computer sleeps or services stop. The collector cache resets on restart; Prometheus history persists in its named volume. `/health` checks HTTP availability, not upstream data quality.
 
 ## Checks and operation
 
@@ -140,4 +140,4 @@ Normal `docker compose down` preserves named volumes. Keep Docker running and th
 
 [Weather data by Open-Meteo](https://open-meteo.com/): [API documentation](https://open-meteo.com/en/docs), [terms](https://open-meteo.com/en/terms) and [usage limits](https://open-meteo.com/en/pricing). Review terms before commercial use or increasing polling.
 
-The Nepal adaptation builds on the supplied MIT-licensed `Grafana_Page` project. The original copyright notice is retained. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE) for attribution.
+This independent project is developed and maintained by Shyam Prasad Kuikel. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE) for attribution.
