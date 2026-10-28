@@ -61,7 +61,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_temperature_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_temperature_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -111,7 +111,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_feels_like_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_feels_like_celsius{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -161,7 +161,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_humidity_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_humidity_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -211,7 +211,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -261,7 +261,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_gust_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_gust_kmh{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -311,7 +311,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_precipitation_mm{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_precipitation_mm{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -361,7 +361,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_cloud_cover_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_cloud_cover_percent{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -411,7 +411,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_condition_code{city=\"Kathmandu, Nepal\",city=~\"$city\"}",
+          "expr": "weather_condition_code{city=\"Kathmandu, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Kathmandu, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Kathmandu, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -715,7 +715,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_temperature_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_temperature_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -765,7 +765,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_feels_like_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_feels_like_celsius{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -815,7 +815,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_humidity_percent{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_humidity_percent{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -865,7 +865,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -915,7 +915,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_gust_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_gust_kmh{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -965,7 +965,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_precipitation_mm{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_precipitation_mm{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1015,7 +1015,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_cloud_cover_percent{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_cloud_cover_percent{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1065,7 +1065,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_condition_code{city=\"Pokhara, Nepal\",city=~\"$city\"}",
+          "expr": "weather_condition_code{city=\"Pokhara, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Pokhara, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Pokhara, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1369,7 +1369,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_temperature_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_temperature_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1419,7 +1419,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_feels_like_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_feels_like_celsius{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1469,7 +1469,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_humidity_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_humidity_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1519,7 +1519,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1569,7 +1569,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_gust_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_wind_gust_kmh{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1619,7 +1619,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_precipitation_mm{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_precipitation_mm{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1669,7 +1669,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_cloud_cover_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_cloud_cover_percent{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -1719,7 +1719,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_condition_code{city=\"Biratnagar, Nepal\",city=~\"$city\"}",
+          "expr": "weather_condition_code{city=\"Biratnagar, Nepal\",city=~\"$city\"} and on(city) (weather_fetch_success{city=\"Biratnagar, Nepal\",city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=\"Biratnagar, Nepal\",city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": true,
           "range": false
@@ -2187,7 +2187,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_temperature_celsius{city=~\"$city\"}",
+          "expr": "weather_temperature_celsius{city=~\"$city\"} and on(city) (weather_fetch_success{city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": false,
           "range": true
@@ -2241,7 +2241,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_humidity_percent{city=~\"$city\"}",
+          "expr": "weather_humidity_percent{city=~\"$city\"} and on(city) (weather_fetch_success{city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": false,
           "range": true
@@ -2295,7 +2295,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_wind_kmh{city=~\"$city\"}",
+          "expr": "weather_wind_kmh{city=~\"$city\"} and on(city) (weather_fetch_success{city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": false,
           "range": true
@@ -2349,7 +2349,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "weather_precipitation_mm{city=~\"$city\"}",
+          "expr": "weather_precipitation_mm{city=~\"$city\"} and on(city) (weather_fetch_success{city=~\"$city\"} == 1) and on(city) (time() - weather_last_success_timestamp_seconds{city=~\"$city\"} < 900) and on(city) (time() - weather_source_timestamp_seconds{city=~\"$city\"} < 7200)",
           "legendFormat": "{{city}}",
           "instant": false,
           "range": true
