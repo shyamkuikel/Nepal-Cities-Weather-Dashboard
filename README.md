@@ -1,6 +1,6 @@
 # Nepal Cities Weather Dashboard
 
-**Nepal adaptation maintained by Shyam Prasad Kuikel**
+**Developed and maintained by Shyam Prasad Kuikel**
 
 A Python, Prometheus and Grafana project comparing weather estimates in **Kathmandu, Pokhara and Biratnagar**. It downloads real Open-Meteo API responses and displays temperature, feels-like temperature, humidity, wind, gusts, precipitation, cloud cover and weather conditions.
 
@@ -140,4 +140,4 @@ Normal `docker compose down` preserves named volumes. Keep Docker running and th
 
 [Weather data by Open-Meteo](https://open-meteo.com/): [API documentation](https://open-meteo.com/en/docs), [terms](https://open-meteo.com/en/terms) and [usage limits](https://open-meteo.com/en/pricing). Review terms before commercial use or increasing polling.
 
-The Nepal adaptation builds on the supplied MIT-licensed `Grafana_Page` project. The original copyright notice is retained. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE) for attribution.
+This independent project is developed and maintained by Shyam Prasad Kuikel. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE) for attribution.
