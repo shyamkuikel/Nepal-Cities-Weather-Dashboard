@@ -100,7 +100,7 @@ Changing city names also requires updating card titles and queries in `grafana/d
 
 Precipitation is the provider's **current-interval amount, not a daily total**. Do not sum repeated scrapes to estimate rainfall. Estimates represent a model grid point near the requested coordinates; terrain and microclimates can differ from conditions at a particular street or station.
 
-Failed downloads retain the last successful sample and mark the city as failed. Check download status and source age. Data are not backfilled while the computer sleeps or services stop. The collector cache resets on restart; Prometheus history persists in its named volume. `/health` checks HTTP availability, not upstream data quality.
+Failed downloads retain the last successful sample for diagnostics and mark the city as failed. Live weather panels suppress readings when the last fetch failed, the last successful download is older than 15 minutes, or the provider observation is older than 2 hours. Check download status and source age. Data are not backfilled while the computer sleeps or services stop. The collector cache resets on restart; Prometheus history persists in its named volume. `/health` checks HTTP availability, not upstream data quality.
 
 ## Checks and operation
 
