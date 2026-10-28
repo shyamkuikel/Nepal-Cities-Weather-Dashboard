@@ -56,6 +56,21 @@ class WeatherTests(unittest.TestCase):
         ids = [panel['id'] for panel in dashboard['panels']]
         self.assertEqual(len(ids), len(set(ids)))
 
+    def test_live_panels_hide_failed_or_stale_readings(self):
+        with open('grafana/dashboards/weather.json') as source:
+            dashboard = json.load(source)
+        weather_metrics = tuple(FIELDS[key][0] for key in FIELDS)
+        checked = 0
+        for panel in dashboard['panels']:
+            for target in panel.get('targets', []):
+                expr = target.get('expr', '')
+                if expr.startswith(weather_metrics):
+                    self.assertIn('weather_fetch_success', expr)
+                    self.assertIn('weather_last_success_timestamp_seconds', expr)
+                    self.assertIn('weather_source_timestamp_seconds', expr)
+                    checked += 1
+        self.assertEqual(checked, 28)
+
     def test_wrong_units_are_rejected(self):
         data = payload()
         data['current_units']['temperature_2m'] = '°F'
